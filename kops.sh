@@ -14,6 +14,6 @@ mv kops-linux-amd64 /usr/local/bin/kops
 aws s3api create-bucket --bucket cloudanddevopsbyraham0073456.k8s.local --region us-east-1
 aws s3api put-bucket-versioning --bucket cloudanddevopsbyraham0073456.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
 export KOPS_STATE_STORE=s3://chandu.k8s
-kops create cluster --name chandu.k8s.local --zones us-east-1a,us-east-1b --master-count=1 --master-size t2.large --master-volume-size 30 --node-count=3 --node-size t2.medium
- --node-volume-size 20
+kops create cluster --name chandu.k8s.local --zones us-east-1a,us-east-1b --master-count=1 --master-size t2.large --master-volume-size 30 --node-count=3 --node-size t2.medium  --node-volume-size 20
+ 
 kops update cluster --name chandu.k8s.local --yes --admin
